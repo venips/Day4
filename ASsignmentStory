@@ -1,0 +1,139 @@
+package com.veni.javafiles;
+
+public class MyStory {
+
+	public static void main(String[] args) {
+		Trading tradingObj= new Trading();
+		System.out.println(tradingObj.companyName);
+		tradingObj.sellLaptop();
+		tradingObj.sellAirConditioner();
+		tradingObj.sellAquarium();
+		tradingObj.sellShirt();
+		tradingObj.sellToy();
+		
+		HolidayHome holidayhomeObj = new HolidayHome();
+		holidayhomeObj.providesrestaurant();
+		
+		Hotel hotelObj = new Hotel();
+		hotelObj.prepareFood();
+		hotelObj.paygasbill();
+		hotelObj.askFeedBackForm();
+		
+		ClassRoom classroomObj = new ClassRoom();
+		classroomObj.submitReportCard();
+		
+		Library libraryObj = new Library();
+		libraryObj.keepBook();
+		
+		LearningGuitar learningguitarObj = new LearningGuitar();
+		learningguitarObj.useClassRoom();
+		
+	}
+
+}
+class Company{
+	final String companyName = "My Trading Company";
+
+} 
+class Trading extends Company // isA
+{
+	/*void changeName() {
+		companyName	= "ABC India PVT";
+	}*/
+	static int laptopprice = 25000;
+	
+	Laptop sellLaptop() //hasA
+	{
+		System.out.println("Company trades Laptop");
+		System.out.println("The Laptop company purchase price is :"+laptopprice);
+		Laptop laptopObj = new Laptop();
+		
+		System.out.println("The Laptop selling price is :"+laptopObj.laptopprice);
+		return laptopObj;
+	}
+	Shirt sellShirt(){
+		System.out.println("Company trades Shirt");
+		Shirt shirtObj = new Shirt();
+		return shirtObj;
+	}
+	Toy sellToy(){
+		System.out.println("Company trades Toy");
+		Toy toyObj = new Toy();
+		return toyObj;
+	}
+	Aquarium sellAquarium(){
+		System.out.println("Company trades Aquarium");
+		Aquarium aquariumObj = new Aquarium();
+		return aquariumObj;
+	}
+	AirConditioner sellAirConditioner(){
+		System.out.println("Company trades AirConditioner");
+		AirConditioner airconditionerObj = new AirConditioner();
+		return airconditionerObj;
+	}
+	
+}
+class Laptop{
+	int laptopprice = 45;
+}
+class Shirt{}
+class Toy{}
+class Aquarium{}
+class AirConditioner{}
+//================================
+class Restaurant{}
+class FoodRestaurant extends Restaurant{}
+class KFC extends FoodRestaurant{}
+class GasBill{}
+class Hotel{
+	Food prepareFood()
+	{
+		Food foodObj = new Food();
+		return foodObj;
+	}
+	FeedBackForm askFeedBackForm()
+	{
+		FeedBackForm feedbackObj = new FeedBackForm();
+		return feedbackObj;
+	}
+	GasBill paygasbill()
+	{
+		GasBill gasbillObj = new GasBill();
+		return gasbillObj;
+	}
+}
+
+class Food{}
+
+class FeedBackForm{}
+class HolidayHome{
+	Restaurant providesrestaurant()
+	{
+		Restaurant restaurantObj = new Restaurant();
+		return restaurantObj;
+	}
+}
+//---------------------------------------------
+class TwoWheeler extends Vehicle{}
+class Vehicle{}
+class ClassRoom{
+	void submitReportCard() //useA
+	{
+		ReportCard reportcardObj = new ReportCard();	
+	}
+}
+class Library{
+	Library keepBook()
+	{
+		Library libraryObj = new Library();
+		return libraryObj;
+	}
+}
+class Book{}
+class ReportCard{}
+class LearningGuitar{
+	void useClassRoom() //useA
+	{
+		ClassRoom classroomObj = new ClassRoom();
+	}
+}
