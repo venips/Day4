@@ -74,7 +74,7 @@ class Trading extends Company // isA
 	
 }
 class Laptop{
-	int laptopprice = 45;
+	int laptopprice = 45000;
 }
 class Shirt{}
 class Toy{}
